@@ -19,7 +19,8 @@ namespace DisrespectMastery
             MenuConfig.InitMenu();
             Random = new Random();
             Game.OnUpdate += OnUpdate;
-            Game.PrintChat("Mastery Badge Load");
+            Game.Say("/masterybadge");
+            Game.PrintChat("Mastery Badge Load v3");
         }
 
         static void OnUpdate(EventArgs args)
@@ -30,7 +31,9 @@ namespace DisrespectMastery
             if (ObjectManager.Player.ChampionsKilled > MyKills && IsActive("Use.When.Kill.Enemy"))
             {
                 MyKills = ObjectManager.Player.ChampionsKilled;
-                Disrespect();
+                Game.Say("/masterybadge");
+                Game.Say("Killed");
+                //Disrespect();
             }
             if (ObjectManager.Player.Assists > MyAssists && IsActive("Use.When.Kill.Enemy"))
             {
@@ -52,11 +55,11 @@ namespace DisrespectMastery
 
         public static void Disrespect()
         {
-            if (Utils.GameTimeTickCount - LastEmote > Random.Next(5000, 150000))
-            {
-                LastEmote = Utils.GameTimeTickCount;
-                Game.Say(MasteryBadgeCommand);
-            }
+            //if (Utils.GameTimeTickCount - LastEmote > Random.Next(5000, 150000))
+            //{
+                //LastEmote = Utils.GameTimeTickCount;
+                Game.Say("/masterybadge");
+            //}
         }
     }
 }

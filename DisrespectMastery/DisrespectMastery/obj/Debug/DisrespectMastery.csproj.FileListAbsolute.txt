@@ -17,3 +17,19 @@ C:\Users\Lucas\Documents\Visual Studio 2015\Projects\DisrespectMastery\Disrespec
 C:\Users\Lucas\Documents\Visual Studio 2015\Projects\DisrespectMastery\DisrespectMastery\bin\Debug\InputSimulator.dll
 C:\Users\Lucas\Documents\Visual Studio 2015\Projects\DisrespectMastery\DisrespectMastery\bin\Debug\InputSimulator.pdb
 C:\Users\Lucas\Documents\Visual Studio 2015\Projects\DisrespectMastery\DisrespectMastery\bin\Debug\InputSimulator.xml
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\bin\Debug\DisrespectMastery.exe.config
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\obj\Debug\DisrespectMastery.exe
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\obj\Debug\DisrespectMastery.pdb
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\bin\Debug\DisrespectMastery.exe
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\bin\Debug\DisrespectMastery.pdb
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\bin\Debug\LeagueSharp.Common.dll
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\bin\Debug\LeagueSharp.dll
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\bin\Debug\SharpDX.dll
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\bin\Debug\LeagueSharp.Data.dll
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\bin\Debug\clipper_library.dll
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\bin\Debug\LeagueSharp.Common.pdb
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\bin\Debug\LeagueSharp.Data.pdb
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\bin\Debug\clipper_library.pdb
+C:\Users\Lucas\Documents\GitHub\LeagueSharp\DisrespectMastery\DisrespectMastery\obj\Debug\DisrespectMastery.csprojResolveAssemblyReference.cache
