@@ -25,6 +25,7 @@ namespace Viktor.Champions
             AntiGapcloser.OnEnemyGapcloser += OnAntiGapCloser;
             Orbwalking.OnNonKillableMinion += Orbwalking_OnNonKillableMinion;
             Interrupter2.OnInterruptableTarget += OnInterruptableTarget;
+            Orbwalking.BeforeAttack += OrbwalkingOnBeforeAttack;
         }
 
         private static void Game_OnUpdate(EventArgs args)
@@ -33,6 +34,7 @@ namespace Viktor.Champions
             {
                 case Orbwalking.OrbwalkingMode.Combo:
                     OnCombo();
+                    UberMode();
                     break;
                 case Orbwalking.OrbwalkingMode.Mixed:
                     OnHarass();
@@ -67,6 +69,21 @@ namespace Viktor.Champions
         private static void Orbwalking_OnNonKillableMinion(AttackableUnit minion)
         {
             CastQUnkillabeMinion();
+        }
+
+        private static void OrbwalkingOnBeforeAttack(Orbwalking.BeforeAttackEventArgs args)
+        {
+            if (Utilities.IsEnabled("q.misc"))
+            {
+                if (args.Target.Type == GameObjectType.obj_AI_Hero && Utilities.Player.HasBuff("viktorpowertransferreturn"))
+                {
+                    args.Process = true;
+                }
+                else
+                {
+                    args.Process = false;
+                }
+            }
         }
 
         public static void OnCombo()
@@ -440,7 +457,28 @@ namespace Viktor.Champions
         private static void CastE(Vector2 source, Vector2 destination)
         {
             spells[Spells.E].Cast(source, destination);
-        } 
+        }
+
+        private static void UberMode()
+        {
+            Orbwalking.MoveTo(Game.CursorPos);
+            if (!spells[Spells.Q].IsReady() 
+                || !(Utilities.Player.HasBuff("viktorqaug") 
+                || Utilities.Player.HasBuff("viktorqeaug") 
+                || Utilities.Player.HasBuff("viktorqwaug") 
+                || Utilities.Player.HasBuff("viktorqweaug")))
+                return;
+
+            foreach (var enemy in HeroManager.Enemies.Where(x => !x.IsValidTarget(spells[Spells.Q].Range) && Utilities.IsEnabled("q.uber")))
+            {
+                var mMinion = MinionManager.GetMinions(spells[Spells.Q].Range, MinionTypes.All, MinionTeam.NotAlly).MinOrDefault(m => Utilities.Player.Distance(m));
+
+                if (mMinion.IsValidTarget(spells[Spells.Q].Range))
+                {
+                    spells[Spells.Q].Cast(mMinion);
+                }
+            }
+        }
 
         private static void DrawingOnDraw(EventArgs args)
         {

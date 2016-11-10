@@ -20,6 +20,7 @@ namespace Viktor.Extensions
                     QMenu.AddItem(new MenuItem("q.combo",   "Use [Q] in Combo").SetValue(true));
                     QMenu.AddItem(new MenuItem("q.harass",  "Use [Q] in Harass").SetValue(true));
                     QMenu.AddItem(new MenuItem("q.lasthit", "Use [Q] Unkilable minion").SetValue(true));
+                    QMenu.AddItem(new MenuItem("q.uber",    "Use [Q] Uber Mode").SetValue(true).SetTooltip("Use [Q] in minion if target is far away from [Q] Range"));
                     menuCfg.AddSubMenu(QMenu);
                 }
                 var WMenu = new Menu("..:: Spell Config [W]", "spells.config.w");
@@ -60,6 +61,10 @@ namespace Viktor.Extensions
                         RWhiteList.AddItem(new MenuItem("r.champ.whitelist" + enemy.ChampionName, "Use [R] on:  " + enemy.ChampionName).SetValue(true).SetFontStyle(FontStyle.Bold, Color.Gold));
                     }
                     RMenu.AddSubMenu(RWhiteList);
+                }
+                var MiscMenu = new Menu("..:: Misc Config", "misc.config");
+                {
+                    MiscMenu.AddItem(new MenuItem("q.misc", "Disabe Auto Attack").SetValue(true));
                 }
                 var DrawMenu = new Menu("..:: Drawming Config", "draw.config");
                 {
