@@ -1,0 +1,16 @@
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\bin\Debug\TwistedFate.exe.config
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\bin\Debug\TwistedFate.exe
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\bin\Debug\TwistedFate.pdb
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\bin\Debug\LeagueSharp.Common.dll
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\bin\Debug\LeagueSharp.dll
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\bin\Debug\SharpDX.dll
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\bin\Debug\SharpDX.Direct3D9.dll
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\bin\Debug\LeagueSharp.Data.dll
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\bin\Debug\clipper_library.dll
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\bin\Debug\Newtonsoft.Json.dll
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\bin\Debug\LeagueSharp.Common.pdb
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\bin\Debug\LeagueSharp.Data.pdb
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\bin\Debug\clipper_library.pdb
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\obj\Debug\TwistedFate.csprojResolveAssemblyReference.cache
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\obj\Debug\TwistedFate.exe
+c:\users\lucas\documents\visual studio 2015\Projects\TwistedFate\TwistedFate\obj\Debug\TwistedFate.pdb
