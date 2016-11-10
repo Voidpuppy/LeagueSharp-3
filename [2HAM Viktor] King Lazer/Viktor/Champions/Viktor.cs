@@ -435,12 +435,12 @@ namespace Viktor.Champions
         private static void CastE(Vector3 source, Vector3 destination)
         {
             spells[Spells.E].Cast(source, destination);
-        } // Algorithm by Trus. Congratz bro
+        } 
 
         private static void CastE(Vector2 source, Vector2 destination)
         {
             spells[Spells.E].Cast(source, destination);
-        } // Algorithm by Trus. Congratz bro
+        } 
 
         private static void DrawingOnDraw(EventArgs args)
         {

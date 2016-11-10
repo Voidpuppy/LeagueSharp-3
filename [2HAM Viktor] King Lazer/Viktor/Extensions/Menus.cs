@@ -39,7 +39,7 @@ namespace Viktor.Extensions
                     EMenu.AddItem(new MenuItem("e.harass",          "Use [E] in Harass").SetValue(true));
                     EMenu.AddItem(new MenuItem("e.clear",           "Use [E] in Lane Clear").SetValue(true));
                     EMenu.AddItem(new MenuItem("e.clear.minhit",    "Min. minions to Hit [E]")).SetValue(new Slider(4, 1, 10));
-                    EMenu.AddItem(new MenuItem("sel.hitchance.e",   "Hit Chance:").SetValue(new StringList(Utilities.HitchanceNameArray, 3)).SetTooltip("This Spells only support SPrediction", Color.GreenYellow));
+                    EMenu.AddItem(new MenuItem("sel.hitchance.e",   "Hit Chance:").SetValue(new StringList(Utilities.HitchanceNameArray, 3)));
                     EMenu.AddItem(new MenuItem("tip.hitchance.e",   "Recommended set HitChance to [High]"));
                     menuCfg.AddSubMenu(EMenu);
                 }
@@ -50,7 +50,7 @@ namespace Viktor.Extensions
                     RMenu.AddItem(new MenuItem("r.follow",          "Use [R] Auto Follow").SetValue(true));
                     RMenu.AddItem(new MenuItem("r.min.hit",         "Minimum Enemys to Hit [R]")).SetValue(new Slider(2, 1, 5));
                     RMenu.AddItem(new MenuItem("sel.hitchance.r",   "Hit Chance:").SetValue(new StringList(Utilities.HitchanceNameArray, 2)));
-                    RMenu.AddItem(new MenuItem("tip.hitchance.r",   "Recommended set HitChance for [Very High] in Commom/OKTW Prediction"));
+                    RMenu.AddItem(new MenuItem("tip.hitchance.r",   "Recommended set HitChance for [Very High]"));
                     menuCfg.AddSubMenu(RMenu);
                 }
                 var RWhiteList = new Menu("Use [R] WhiteList", "r.whitelist");
