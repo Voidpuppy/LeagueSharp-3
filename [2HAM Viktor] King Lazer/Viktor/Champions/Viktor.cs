@@ -23,6 +23,7 @@ namespace Viktor.Champions
             Game.OnUpdate += Game_OnUpdate;
             Drawing.OnDraw += DrawingOnDraw;
             AntiGapcloser.OnEnemyGapcloser += OnAntiGapCloser;
+            Orbwalking.OnNonKillableMinion += Orbwalking_OnNonKillableMinion;
             Interrupter2.OnInterruptableTarget += OnInterruptableTarget;
         }
 
@@ -41,7 +42,6 @@ namespace Viktor.Champions
                     OnJungleClear();
                     break;
                 case Orbwalking.OrbwalkingMode.LastHit:
-                    OnLastHit();
                     break;
             }
 
@@ -54,7 +54,6 @@ namespace Viktor.Champions
             }
 
             W_OnCCandImmobile();
-            CastQUnkillabeMinion();
         }
 
         private static void OnWndProc(WndEventArgs args)
@@ -63,6 +62,11 @@ namespace Viktor.Champions
             {
                 Menus.menuCfg.Item("e.clear").SetValue(!Menus.menuCfg.Item("e.clear").GetValue<bool>());
             }
+        }
+
+        private static void Orbwalking_OnNonKillableMinion(AttackableUnit minion)
+        {
+            CastQUnkillabeMinion();
         }
 
         public static void OnCombo()
@@ -164,13 +168,6 @@ namespace Viktor.Champions
             }
         }
 
-        public static void OnLastHit()
-        {
-            var QinMinion = MinionManager.GetMinions(Utilities.Player.ServerPosition, spells[Spells.Q].Range, MinionTypes.All, MinionTeam.Enemy);
-            if (spells[Spells.Q].IsReady() && Utilities.IsEnabled("q.lasthit"))
-            { }
-        }
-
         private static void OnAntiGapCloser(ActiveGapcloser gGapCloser)
         {
             switch (gGapCloser.Sender.ChampionName)
@@ -210,7 +207,7 @@ namespace Viktor.Champions
 
         private static void CastQUnkillabeMinion()
         {
-            if (!Utilities.IsEnabled(""))
+            if (!Utilities.IsEnabled("q.lasthit"))
                 return;
 
             var MinionQ = MinionManager.GetMinions(spells[Spells.Q].Range, MinionTypes.All, MinionTeam.Enemy, MinionOrderTypes.Health);
@@ -273,11 +270,11 @@ namespace Viktor.Champions
                 damage += spells[Spells.Q].GetDamage(enemy);
             }
 
-            if (spells[Spells.Q].IsReady() || ObjectManager.Player.HasBuff("viktorpowertransferreturn") && Utilities.IsEnabled("q.combo"))
+            if (spells[Spells.Q].IsReady() || Utilities.Player.HasBuff("viktorpowertransferreturn") && Utilities.IsEnabled("q.combo"))
             {
                 damage += (float)Utilities.Player.CalcDamage(enemy, Damage.DamageType.Magical,
                     QAADamage[Utilities.Player.Level >= 18 ? 18 - 1 : Utilities.Player.Level - 1] +
-                    (Utilities.Player.TotalMagicalDamage * .5) + Utilities.Player.TotalAttackDamage());
+                    (Utilities.Player.TotalMagicalDamage * .5) /*+ Utilities.Player.TotalAttackDamage()*/);
             }
 
             if (spells[Spells.E].IsReady() && Utilities.IsEnabled("e.combo"))
@@ -468,24 +465,20 @@ namespace Viktor.Champions
             {
                 Render.Circle.DrawCircle(Utilities.Player.Position, spells[Spells.R].Range, System.Drawing.Color.Tomato);
             }
-
-            //if (!Menu.Item("DrawSpellFarm").GetValue<bool>())
-              //  return;
-
-            //if (Menu.Item("EnableFarming").GetValue<bool>())
-            //{
+            if (Utilities.IsEnabled("e.clear"))
+            {
                 var drawPos = Drawing.WorldToScreen(Utilities.Player.Position);
                 var textSize = Drawing.GetTextExtent("Spell Farm: ON");
                 Drawing.DrawText(drawPos.X - textSize.Width - 70f, drawPos.Y, System.Drawing.Color.Chartreuse,
                     "Spell Farm: ON");
-            //}
-            //else
-            //{
+            }
+            else
+            {
                 var drawPos2 = Drawing.WorldToScreen(Utilities.Player.Position);
                 var textSize2 = Drawing.GetTextExtent("Spell Farm: OFF");
-                Drawing.DrawText(drawPos2.X - textSize2.Width - 70f, drawPos2.Y, System.Drawing.Color.DeepPink,
+                Drawing.DrawText(drawPos2.X - textSize2.Width - 70f, drawPos2.Y, System.Drawing.Color.Red,
                     "Spell Farm: OFF");
-            //}
+            }
         }
     }
 }

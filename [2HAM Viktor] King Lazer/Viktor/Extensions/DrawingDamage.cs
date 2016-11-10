@@ -38,8 +38,8 @@ namespace Viktor.Extensions
 
         private static void Drawing_OnDraw(EventArgs args)
         {
-            if (!Enabled || (_damageToUnit == null))
-                return;
+            //if (!Enabled || (_damageToUnit == null))
+                //return;
 
             foreach (var unit in HeroManager.Enemies.Where(h => h.IsValid && h.IsHPBarRendered))
             {
