@@ -55,7 +55,6 @@ namespace TwistedFate
 
             Game.OnUpdate += Game_GameOnUpdate;
             Drawing.OnDraw += Drawing_OnDraw;
-            Drawing.OnEndScene += Drawing_OnEndScene;
         }
 
         private static void Game_GameOnUpdate(EventArgs args)
@@ -74,11 +73,6 @@ namespace TwistedFate
                 CardSelector.StartSelecting(Cards.Red);
             }
             #endregion
-        }
-
-        private static void Drawing_OnEndScene(EventArgs args)
-        {
-                Utility.DrawCircle(ObjectManager.Player.Position, 5500, Color.Chartreuse, 1, 23, true);
         }
 
         private static void Drawing_OnDraw(EventArgs args)
