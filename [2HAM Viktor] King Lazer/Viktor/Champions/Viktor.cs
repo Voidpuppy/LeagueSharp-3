@@ -84,7 +84,7 @@ namespace Viktor.Champions
                         }
                         else
                         {
-                            args.Process = false;
+                            Orbwalking.LastAATick=0;
                         }
                         break;
                     default:
