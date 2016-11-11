@@ -25,7 +25,7 @@ namespace Viktor.Champions
             AntiGapcloser.OnEnemyGapcloser += OnAntiGapCloser;
             Orbwalking.OnNonKillableMinion += Orbwalking_OnNonKillableMinion;
             Interrupter2.OnInterruptableTarget += OnInterruptableTarget;
-            //Orbwalking.BeforeAttack += OrbwalkingOnBeforeAttack;
+            Orbwalking.BeforeAttack += OrbwalkingOnBeforeAttack;
         }
 
         private static void Game_OnUpdate(EventArgs args)
@@ -71,7 +71,7 @@ namespace Viktor.Champions
             CastQUnkillabeMinion();
         }
 
-        /*private static void OrbwalkingOnBeforeAttack(Orbwalking.BeforeAttackEventArgs args)
+        private static void OrbwalkingOnBeforeAttack(Orbwalking.BeforeAttackEventArgs args)
         {
             if (Utilities.IsEnabled("q.misc"))
             {
@@ -80,7 +80,7 @@ namespace Viktor.Champions
                     case Orbwalking.OrbwalkingMode.Combo:
                         if (args.Target.Type == GameObjectType.obj_AI_Hero && Utilities.Player.HasBuff("viktorpowertransferreturn"))
                         {
-                            args.Process = true;
+                           LastAATick=0;
                         }
                         else
                         {
@@ -92,7 +92,7 @@ namespace Viktor.Champions
                 }
             
             }
-        }*/
+        }
 
         public static void OnCombo()
         {
