@@ -80,7 +80,7 @@ namespace Viktor.Champions
                     case Orbwalking.OrbwalkingMode.Combo:
                         if (args.Target.Type == GameObjectType.obj_AI_Hero && Utilities.Player.HasBuff("viktorpowertransferreturn"))
                         {
-                           LastAATick=0;
+                           Orbwalking.LastAATick=0;
                         }
                         else
                         {
